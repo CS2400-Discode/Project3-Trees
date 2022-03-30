@@ -2,6 +2,11 @@ public class EmptyTreeException extends RuntimeException
 {
     public EmptyTreeException()
     {
-        super ("Tree is Empty.");
-    }
-}
+        this(null);
+    } // end default constructor
+
+    public EmptyTreeException(String message)
+    {
+        super(message);
+    } // end constructor
+} // end EmptyTreeException
