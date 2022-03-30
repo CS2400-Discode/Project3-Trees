@@ -7,7 +7,7 @@ Owen Lovett, Nil Patel, Shane Thomas
 
 Contributions:
 -
-Shane Thomas: 
+Shane Thomas: createTree2 method
 
 Owen Lovett: 
 
