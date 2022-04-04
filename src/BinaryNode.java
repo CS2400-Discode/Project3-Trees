@@ -106,6 +106,17 @@ class BinaryNode<T>
      * prints (using post-order traversal) all nodes of the subtree rooted at "this" node */
     public void postorderTraverse_binaryNodeMethod()
     {
+        if(leftChild !=null)
+        {
+            leftChild.postorderTraverse_binaryNodeMethod();
+        }
+
+        if(rightChild !=null)
+        {
+            rightChild.postorderTraverse_binaryNodeMethod();
+        }
+
+        System.out.println(getData());
     }
 
     /**--------------------------------------------------------------------
@@ -115,7 +126,18 @@ class BinaryNode<T>
      @return  The height of the subtree rooted at "this" node. */
     public int getHeight_binaryNodeMethod()
     {
-        return 0;
+        int leftHeight = 0;
+        int rightHeight = 0;
+        if (leftChild != null)
+        {
+            leftHeight = leftChild.getHeight_binaryNodeMethod();
+        }
+
+        if (rightChild != null)
+        {
+            rightHeight = rightChild.getHeight_binaryNodeMethod();
+        }
+        return 1 + Math.max(leftHeight, rightHeight);
     } // end getHeight
 
     /** -------------------------------------------------------------------- */
