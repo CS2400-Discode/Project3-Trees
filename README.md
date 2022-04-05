@@ -9,9 +9,9 @@ Contributions:
 -
 Shane Thomas: createTree2 method
 
-Owen Lovett: 
+Owen Lovett: unit tests
 
-Nil Patel: 
+Nil Patel: binaryTree / binaryNode methods
 
 Extra Features:
 -
@@ -19,7 +19,3 @@ Unit Tests using JUnit
 
 Video Link:
 - 
-
-
-Javadoc Start Page:
--
