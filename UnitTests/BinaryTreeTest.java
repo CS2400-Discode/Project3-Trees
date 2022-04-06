@@ -6,7 +6,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 /**
- * The postorderTraverse Tests only pass when the line Separator for the IDE is set to CRLF (Windows).
+ * The postorderTraverse Tests only pass when the line Separator for the IDE is set to LF (Unix/macOS).
  * If not then it fails and says "Contents have differences only in line separators" even though the Content is the exact same and should pass.
  */
 
@@ -24,7 +24,8 @@ class BinaryTreeTest {
         BinaryTree<String> aTree = new BinaryTree<>("A", bTree, cTree);
         aTree.postorderTraverse();
 
-        String expectedOutput  = "B\r\nC\r\nA\r\n";
+        String expectedOutput  = "B\nC\nA\n";                   // This is why it needs to be LF. For CRLF (Windows) The expectedOutput should be:
+                                                                // "B\r\nC\r\nA\r\n"
         assertEquals(expectedOutput, outContent.toString());
     }
 
@@ -40,7 +41,7 @@ class BinaryTreeTest {
         BinaryTree<String> aTree = new BinaryTree<>("A", bTree, null);
         aTree.postorderTraverse();
 
-        String expectedOutput  = "B\r\nA\r\n";
+        String expectedOutput  = "B\nA\n";
         assertEquals(expectedOutput, outContent.toString());
     }
 
@@ -56,7 +57,7 @@ class BinaryTreeTest {
         BinaryTree<String> aTree = new BinaryTree<>("A", null, cTree);
         aTree.postorderTraverse();
 
-        String expectedOutput  = "C\r\nA\r\n";
+        String expectedOutput  = "C\nA\n";
         assertEquals(expectedOutput, outContent.toString());
     }
 
@@ -73,7 +74,7 @@ class BinaryTreeTest {
         BinaryTree<String> aTree = new BinaryTree<>("A", bTree, cTree);
         aTree.postorderTraverse_callBinaryNodeMethod();
 
-        String expectedOutput  = "B\r\nC\r\nA\r\n";
+        String expectedOutput  = "B\nC\nA\n";
         assertEquals(expectedOutput, outContent.toString());
     }
 
@@ -89,7 +90,7 @@ class BinaryTreeTest {
         BinaryTree<String> aTree = new BinaryTree<>("A", bTree, null);
         aTree.postorderTraverse_callBinaryNodeMethod();
 
-        String expectedOutput  = "B\r\nA\r\n";
+        String expectedOutput  = "B\nA\n";
         assertEquals(expectedOutput, outContent.toString());
     }
 
@@ -105,7 +106,7 @@ class BinaryTreeTest {
         BinaryTree<String> aTree = new BinaryTree<>("A", null, cTree);
         aTree.postorderTraverse_callBinaryNodeMethod();
 
-        String expectedOutput  = "C\r\nA\r\n";
+        String expectedOutput  = "C\nA\n";
         assertEquals(expectedOutput, outContent.toString());
     }
 
@@ -122,7 +123,7 @@ class BinaryTreeTest {
         BinaryNode<String> aTree = new BinaryNode<>("A", bTree, cTree);
         aTree.postorderTraverse_binaryNodeMethod();
 
-        String expectedOutput  = "B\r\nC\r\nA\r\n";
+        String expectedOutput  = "B\nC\nA\n";
         assertEquals(expectedOutput, outContent.toString());
     }
 
@@ -138,7 +139,7 @@ class BinaryTreeTest {
         BinaryNode<String> aTree = new BinaryNode<>("A", bTree, null);
         aTree.postorderTraverse_binaryNodeMethod();
 
-        String expectedOutput  = "B\r\nA\r\n";
+        String expectedOutput  = "B\nA\n";
         assertEquals(expectedOutput, outContent.toString());
     }
 
@@ -154,7 +155,7 @@ class BinaryTreeTest {
         BinaryNode<String> aTree = new BinaryNode<>("A", null, cTree);
         aTree.postorderTraverse_binaryNodeMethod();
 
-        String expectedOutput  = "C\r\nA\r\n";
+        String expectedOutput  = "C\nA\n";
         assertEquals(expectedOutput, outContent.toString());
     }
 
